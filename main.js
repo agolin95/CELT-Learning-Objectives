@@ -41,7 +41,30 @@ $(function() {
         } else alert("Please do not leave text input empty.");
     });
     
-    //Bloom Categories
+     $('#prev2').click(function(){
+        $('#section2').hide();
+        $('#section1').show();
+        $('#navItem2').addClass("navPassed");
+        $('#navItem1').addClass("navActive");
+        $('#navItem2').removeClass("navActive");
+    });
+    $('#prev3').click(function(){
+        $('#section3').hide();
+        $('#section2').show();
+        $('#navItem3').addClass("navPassed");
+        $('#navItem2').addClass("navActive");
+        $('#navItem3').removeClass("navActive");
+    });
+    $('#prev4').click(function(){
+        $('#section4').hide();
+        $('#section3').show();
+        $('#navItem4').addClass("navPassed");
+        $('#navItem3').addClass("navActive");
+        $('#navItem4').removeClass("navActive");
+    });
+
+    
+   //Bloom Categories
     $('#remembering').click(function(){
         $('#remembering').addClass("active");
         $('#understanding').removeClass("active");
@@ -49,6 +72,7 @@ $(function() {
         $('#analyzing').removeClass("active");
         $('#evaluating').removeClass("active");
         $('#creating').removeClass("active");
+        $('#ownVerb').removeClass("active");
         
         $('#rememberingOptions').show();
         $('#understandingOptions').hide();
@@ -56,6 +80,9 @@ $(function() {
         $('#analyzingOptions').hide();
         $('#evaluatingOptions').hide();
         $('#creatingOptions').hide();
+        $('#ownVerbOptions').hide();
+        
+        $('#bloomDefinition').text("Demonstrate an ability to recall information previously learned.");
     });    
     $('#understanding').click(function(){
         $('#understanding').addClass("active");
@@ -64,6 +91,7 @@ $(function() {
         $('#analyzing').removeClass("active");
         $('#evaluating').removeClass("active");
         $('#creating').removeClass("active");
+        $('#ownVerb').removeClass("active");
         
         $('#understanding').addClass("active");
         $('#understandingOptions').show();
@@ -72,6 +100,9 @@ $(function() {
         $('#analyzingOptions').hide();
         $('#evaluatingOptions').hide();
         $('#creatingOptions').hide();
+        $('#ownVerbOptions').hide();
+        
+        $('#bloomDefinition').text("Demonstrate an ability to comprehend information.");
     });
     $('#applying').click(function(){
         $('#applying').addClass("active");
@@ -80,6 +111,7 @@ $(function() {
         $('#analyzing').removeClass("active");
         $('#evaluating').removeClass("active");
         $('#creating').removeClass("active");
+        $('#ownVerb').removeClass("active");
         
         $('#applying').addClass("active");
         $('#applyingOptions').show();
@@ -88,6 +120,9 @@ $(function() {
         $('#analyzingOptions').hide();
         $('#evaluatingOptions').hide();
         $('#creatingOptions').hide();
+        $('#ownVerbOptions').hide();
+        
+        $('#bloomDefinition').text("Demonstrate an ability to apply their learning to solve problems.");
     });
     $('#analyzing').click(function(){
         $('#analyzing').addClass("active");
@@ -96,6 +131,7 @@ $(function() {
         $('#understanding').removeClass("active");
         $('#evaluating').removeClass("active");
         $('#creating').removeClass("active");
+        $('#ownVerb').removeClass("active");
         
         $('#analyzing').addClass("active");
         $('#analyzingOptions').show();
@@ -104,6 +140,9 @@ $(function() {
         $('#understandingOptions').hide();
         $('#evaluatingOptions').hide();
         $('#creatingOptions').hide();
+        $('#ownVerbOptions').hide();
+        
+        $('#bloomDefinition').text("Demonstrate an ability to provide thoughtful analysis.");
     });
     $('#evaluating').click(function(){
         $('#evaluating').addClass("active");
@@ -112,6 +151,7 @@ $(function() {
         $('#analyzing').removeClass("active");
         $('#understanding').removeClass("active");
         $('#creating').removeClass("active");
+        $('#ownVerb').removeClass("active");
         
         $('#evaluating').addClass("active");
         $('#evaluatingOptions').show();
@@ -120,6 +160,9 @@ $(function() {
         $('#analyzingOptions').hide();
         $('#understandingOptions').hide();
         $('#creatingOptions').hide();
+        $('#ownVerbOptions').hide();
+        
+        $('#bloomDefinition').text("Demonstrate an ability to synthesize information.");
     });
     $('#creating').click(function(){
         $('#creating').addClass("active");
@@ -128,6 +171,7 @@ $(function() {
         $('#analyzing').removeClass("active");
         $('#evaluating').removeClass("active");
         $('#understanding').removeClass("active");
+        $('#ownVerb').removeClass("active");
         
         $('#creating').addClass("active");
         $('#creatingOptions').show();
@@ -136,16 +180,42 @@ $(function() {
         $('#analyzingOptions').hide();
         $('#evaluatingOptions').hide();
         $('#understandingOptions').hide();
+        $('#moreVerbsOptions').hide();
+        
+        $('#bloomDefinition').text("Demonstrate an ability to evaluate and judge the merit of ideas.");
+    });
+    $('#ownVerb').click(function(){
+        $('#ownVerb').addClass("active");
+        $('#remembering').removeClass("active");
+        $('#applying').removeClass("active");
+        $('#analyzing').removeClass("active");
+        $('#evaluating').removeClass("active");
+        $('#understanding').removeClass("active");
+        $('#creating').removeClass("active");
+
+    
+        $('#ownVerbOptions').show();
+        $('#rememberingOptions').hide();
+        $('#applyingOptions').hide();
+        $('#analyzingOptions').hide();
+        $('#evaluatingOptions').hide();
+        $('#understandingOptions').hide();
+        $('#creatingOptions').hide();
+        
+        $('#bloomDefinition').text("Choose your own verb.");
     });
     
     //Bloom Options
     $('.bloomVal').click(function() {
         $('#target2').text(this.innerHTML.toLowerCase());
         $('.bloomVal').removeClass('active');
-        $(this).addClass('active');
-        
+        $(this).addClass('active');   
     });
     
+    $('#ownVerbInput').change(function() {
+        $('#target2').text($('#ownVerbInput').val());
+        $('.bloomVal').removeClass('active');
+    });    
     
     //Navigation functionality COULD BE REFACTORED
     $('#navItem1').click(function(){
