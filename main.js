@@ -30,15 +30,13 @@ $(function() {
         } else alert("Please do not leave text input empty.");
     }); 
     $('#next4').click(function(){
-        if ($('#condition').val() != "") {
-            $('#target4').text($('#condition').val());
-            $('#section4').hide();
-            $('#result').show();
-            $('#navItem4').removeClass("navActive");
-            $('#navItem4').addClass("navPassed");
-            $('#navItem5').addClass("navActive");
-            $('#navItem5').addClass("navPassed");
-        } else alert("Please do not leave text input empty.");
+        $('#target4').text($('#condition').val());
+        $('#section4').hide();
+        $('#result').show();
+        $('#navItem4').removeClass("navActive");
+        $('#navItem4').addClass("navPassed");
+        $('#navItem5').addClass("navActive");
+        $('#navItem5').addClass("navPassed");
     });
     
      $('#prev2').click(function(){
@@ -424,5 +422,9 @@ $(function() {
     
     $('#copyButton').click(function() {
         window.prompt("Copy to clipboard: Ctrl/Cmd + C, Enter", $('#textBuild').text())
+    });
+    
+    $('#startOver').click(function() {
+        location.reload();
     });
 });
